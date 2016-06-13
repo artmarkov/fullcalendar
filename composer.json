@@ -1,0 +1,39 @@
+{
+    "name": "tecnocen/yii2-fullcalendar",
+    "description": "Yii2 Widgets for the Full Callendar javascript calendar",
+    "keywords": [
+        "yii",
+        "yii2",
+        "javascript",
+        "calendar",
+        "widget",
+        "fullcalendar"
+    ],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/tecnocen-com/yii2-fullcalendar",
+    "authors": [
+        {
+            "name": "Angel (Faryshta) Guevara",
+            "email": "aguevara@tecnocen.com",
+            "homepage": "https://github.com/Faryshta",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2":"~2.0.8",
+        "omnilight/yii2-momentjs": "*",
+        "bower-asset/fullcalendar": "~2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "tecnocen\\fullcalendar\\": ""
+        }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
