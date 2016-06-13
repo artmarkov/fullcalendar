@@ -1,7 +1,7 @@
 <?php
 namespace tecnocen\fullcalendar\tests;
 
-use tecnocen\fullcalendar\assets\Language;
+use tecnocen\fullcalendar\assets\Lang;
 use tecnocen\fullcalendar\widgets\Fullcalendar;
 use Yii;
 use yii\web\View;
@@ -11,7 +11,7 @@ use yii\web\View;
  */
 class FullcalendarTest extends TestCase
 {
-    public function testLanguage()
+    public function testLang()
     {
         $view = Yii::$app->view;
         $expected = <<<'HTML'
@@ -19,18 +19,18 @@ class FullcalendarTest extends TestCase
 HTML;
 
         $this->assertEquals($expected, Fullcalendar::widget([
-            'language' => 'es',
+            'lang' => 'es',
             'options' => ['id' => 'es-calendar'],
         ]));
 
         $this->assertEquals(
-            'jQuery(\'#es-calendar\').fullCalendar({"language":"es"});',
+            'jQuery(\'#es-calendar\').fullCalendar({"lang":"es"});',
             end($view->js[View::POS_READY])
         );
 
-        $this->assertTrue(isset($view->assetBundles[Language::className()]));
-        $languageAsset  = $view->assetBundles[Language::className()];
-        $this->assertEquals('es', $languageAsset->language);
+        $this->assertTrue(isset($view->assetBundles[Lang::className()]));
+        $langAsset  = $view->assetBundles[Lang::className()];
+        $this->assertEquals('es', $langAsset->lang);
     }
 
     public function testWidget()
@@ -42,7 +42,7 @@ HTML;
             'options' => ['id' => 'basic-widget']
         ]));
         $this->assertEquals(
-            'jQuery(\'#basic-widget\').fullCalendar({"language":"en-us"});',
+            'jQuery(\'#basic-widget\').fullCalendar({"lang":"en-us"});',
             end(Yii::$app->view->js[View::POS_READY])
         );
 
@@ -62,7 +62,7 @@ HTML;
 
         $this->assertEquals(
             'jQuery(\'#custom-calendar\')'
-                . '.fullCalendar({"startYear":2012,"language":"en-us"});',
+                . '.fullCalendar({"startYear":2012,"lang":"en-us"});',
             end(Yii::$app->view->js[View::POS_READY])
         );
     }

@@ -2,7 +2,7 @@
 
 namespace tecnocen\fullcalendar\widgets;
 
-use tecnocen\fullcalendar\assets\Language as LanguageAsset;
+use tecnocen\fullcalendar\assets\Lang as LangAsset;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -18,7 +18,7 @@ class Fullcalendar extends \yii\base\Widget
      * be used by the date picker. If this property is empty, then the current
      * application language will be used.
      */
-    public $language;
+    public $lang;
 
     /**
      * @var array the HTML attributes for the widget container tag.
@@ -86,13 +86,13 @@ class Fullcalendar extends \yii\base\Widget
      */
     public function run()
     {
-        $language = $this->language
-            ? $this->language
+        $lang = $this->lang
+            ? $this->lang
             : strtolower(Yii::$app->language);
 
-        $assetBundle = LanguageAsset::register($this->getView());
-        $assetBundle->language = $language;
-        $this->clientOptions['language'] = $language;
+        $assetBundle = LangAsset::register($this->getView());
+        $assetBundle->lang = $lang;
+        $this->clientOptions['lang'] = $lang;
 
         $this->registerPlugin('fullCalendar');
         $tag = ArrayHelper::remove($this->options, 'tag', 'div');

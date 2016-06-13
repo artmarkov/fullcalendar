@@ -7,7 +7,7 @@ use yii\web\AssetBundle;
 /**
  * @author Angel Guevara <angeldelcaos@gmail.com>
  */
-class Language extends AssetBundle
+class Lang extends AssetBundle
 {
     /**
      * @inheritdoc
@@ -23,7 +23,7 @@ class Language extends AssetBundle
     /**
      * @var string language to register translation file for
      */
-    public $language;
+    public $lang;
 
     /**
      * @inheritdoc
