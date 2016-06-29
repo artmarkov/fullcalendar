@@ -79,7 +79,7 @@ class ActiveFullcalendar extends Calendar
         }
 
         $item = $model->toArray();
-        $item['id'] = $model->geCalendarEventId();
+        $item['id'] = $model->getCalendarEventId();
         $item['title'] = $model->getTitle();
         $item['start'] = $model->getStart();
         return $item;
