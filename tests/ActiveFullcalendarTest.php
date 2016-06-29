@@ -1,7 +1,7 @@
 <?php
 namespace tecnocen\yearcalendar\tests;
 
-use tecnocen\yearcalendar\widgets\ActiveCalendar;
+use tecnocen\fullcalendar\widgets\ActiveCalendar;
 use Yii;
 use yii\data\ArrayDataProvider;
 use yii\web\View;
@@ -9,7 +9,7 @@ use yii\web\View;
 /**
  * Test the functionality for the bootstrap-year-calendar plugin active widget.
  */
-class ActiveCalendarTest extends TestCase
+class ActiveFullcalendarTest extends TestCase
 {
     public function testDataWidget()
     {
