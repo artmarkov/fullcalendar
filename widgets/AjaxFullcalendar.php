@@ -8,11 +8,14 @@ use yii\helpers\Url;
 /**
  * @author Angel (Faryshta) Guevara <aguevara@tecnocen.com>
  */
-class AjaxFullcalenda extends Fullcalendar
+class AjaxFullcalendar extends Fullcalendar
 {
     /**
-     * @var mixed Property to be passed to the `Url::top()` helper method to
+     * @var mixed Property to be passored to the `Url::top()` helper method to
      * created the events feed.
+     * ```php
+     * 'url' => ['evento/action', 'id' => $id]
+     * ```
      */
     public $url;
 
@@ -44,7 +47,7 @@ class AjaxFullcalenda extends Fullcalendar
                     );
                 }
                 $source['url'] = Url::to($source['url']);
-                $this->clientOptions['eventSources'] = $source;
+                $this->clientOptions['eventSources'][] = $source;
             }
         }
     }
