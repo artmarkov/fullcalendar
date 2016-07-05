@@ -1,6 +1,6 @@
 <?php
 
-namespace tecnocen\yearcalendar\data;
+namespace tecnocen\fullcalendar\data;
 
 use Date;
 use yii\web\JsExpression;
@@ -18,7 +18,7 @@ interface EventItem extends \yii\base\Arrayable
      *
      * @return JsExpression containing a js `Date` object
      */
-    public function geCalendarEventtId();
+    public function getCalendarEventId();
 
     /**
      * Gets the `name` property of the `dataSource` item.

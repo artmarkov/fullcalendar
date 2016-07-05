@@ -1,11 +1,11 @@
 <?php
 
-namespace tecnocen\yearcalendar\tests\data;
+namespace tecnocen\fullcalendar\tests\data;
 
 use yii\web\JsExpression;
 
 class DataItem extends \yii\base\Model
-    implements \tecnocen\yearcalendar\data\DataItem
+    implements \tecnocen\fullcalendar\data\EventItem
 {
     private $name;
     private $startDate;
@@ -34,5 +34,18 @@ class DataItem extends \yii\base\Model
     public function setEndDate($date)
     {
         $this->endDate = new JsExpression("new Date('$date')");
+    }
+
+    public function getCalendarEventId()
+    {
+        return "uno";
+    }
+    public function getTitle()
+    {
+        return "Conference";
+    }
+    public function getStart()
+    {
+        return new JsExpression("new Date('2016-02-03')");
     }
 }

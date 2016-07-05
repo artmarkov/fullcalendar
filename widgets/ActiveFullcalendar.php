@@ -1,11 +1,12 @@
 <?php
 
-namespace tecnocen\yearcalendar\widgets;
+namespace tecnocen\fullcalendar\widgets;
 
 use yii\data\DataProviderInterface;
-use tecnocen\yearcalendar\data\EventItem;
+use tecnocen\fullcalendar\data\EventItem;
+use tecnocen\fullcalendar\widgets\Fullcalendar;
 
-class ActiveFullcalendar extends Calendar
+class ActiveFullcalendar extends Fullcalendar
 {
     /**
      * @var DataProviderInterface the data provider for the view. This property

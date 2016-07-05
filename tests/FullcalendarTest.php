@@ -65,5 +65,23 @@ HTML;
                 . '.fullCalendar({"startYear":2012,"lang":"en-us"});',
             end(Yii::$app->view->js[View::POS_READY])
         );
+
+        Fullcalendar::widget([
+            'options' => ['id' => 'active-calendar'],
+            'clientEvents' => ['evento' => 'function']
+        ]);
+
+        $expected = <<<'JS'
+jQuery('#active-calendar').on(
+        'evento', function
+);
+JS;
+        $expected = preg_replace('/\n\s*/', '', $expected);
+        $this->assertEquals(
+            $expected,
+            end(Yii::$app->view->js[View::POS_READY])
+        );
+
+
     }
 }

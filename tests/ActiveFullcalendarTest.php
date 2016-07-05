@@ -1,10 +1,11 @@
 <?php
-namespace tecnocen\yearcalendar\tests;
+namespace tecnocen\fullcalendar\tests;
 
-use tecnocen\fullcalendar\widgets\ActiveCalendar;
+use tecnocen\fullcalendar\widgets\ActiveFullcalendar;
 use Yii;
 use yii\data\ArrayDataProvider;
 use yii\web\View;
+use tecnocen\fullcalendar\tests\TestCase;
 
 /**
  * Test the functionality for the bootstrap-year-calendar plugin active widget.
@@ -17,7 +18,7 @@ class ActiveFullcalendarTest extends TestCase
 <div id="active-calendar"></div>
 HTML;
 
-        $this->assertEquals($expected, ActiveCalendar::widget([
+        $this->assertEquals($expected, ActiveFullcalendar::widget([
             'options' => ['id' => 'active-calendar'],
             'dataProvider' => new ArrayDataProvider([
                 'allModels' => [
@@ -34,19 +35,20 @@ HTML;
                 ],
             ]),
         ]));
+
         $expected = <<<'JS'
-jQuery('#active-calendar').calendar({"dataSource":[
+jQuery('#active-calendar').fullCalendar({"dataSource":[
     {
-        "name":"Conference",
-        "startDate":new Date('2016-01-01'),
-        "endDate":new Date('2016-02-03')
+        "id":"uno",
+        "title":"Conference",
+        "start":new Date('2016-02-03')
     },
     {
-        "name":"Random",
-        "startDate":new Date('2016-03-01'),
-        "endDate":new Date('2016-03-03')
+        "id":"uno",
+        "title":"Conference",
+        "start":new Date('2016-02-03')
     }
-],"language":"en"});
+],"lang":"en-us"});
 JS;
         $expected = preg_replace('/\n\s*/', '', $expected);
         $this->assertEquals(
