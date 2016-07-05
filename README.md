@@ -71,7 +71,8 @@ Will add the JS File `es.js` to the view and run
 jQuery('#es-calendar').calendar({"lang":"es"});
 ```
 
-## ActiveFullCalendar ## AjaxFullCalendar
+## ActiveFullCalendar 
+## AjaxFullCalendar
 
 On the browser.
 
