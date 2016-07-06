@@ -36,9 +36,9 @@ class Lang extends AssetBundle
      */
     public function registerAssetFiles($view)
     {
-        if ($this->autoGenerate && $this->language != 'en') {
+        if ($this->autoGenerate && $this->lang != 'en') {
             if (!file_exists(Yii::getAlias(
-                $this->sourcePath . "/{$language}.js"
+                $this->sourcePath . "/{$this->lang}.js"
             ))) {
                 $this->lang = substr($this->lang, 0, 2);
                 return parent::registerAssetFiles($view);
