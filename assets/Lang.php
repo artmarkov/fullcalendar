@@ -43,7 +43,7 @@ class Lang extends AssetBundle
                 $this->lang = substr($this->lang, 0, 2);
                 return parent::registerAssetFiles($view);
             }
-            $this->js[] = $this->language . '.js';
+            $this->js[] = $this->lang . '.js';
         }
         parent::registerAssetFiles($view);
     }
