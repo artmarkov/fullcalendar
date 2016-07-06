@@ -64,7 +64,7 @@ class ActiveFullcalendar extends Fullcalendar
             $rows[] = $this->prepareItem($model, $key, $index);
         }
 
-        $this->clientOptions['dataSource'] = $rows;
+        $this->clientOptions['events'] = $rows;
     }
 
     public function prepareItem(EventItem $model, $key, $index)
