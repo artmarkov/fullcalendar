@@ -38,9 +38,9 @@ class Lang extends AssetBundle
     {
         if ($this->autoGenerate && $this->language != 'en') {
             if (!file_exists(Yii::getAlias(
-                $this->sourcePath . "/bootstrap-year-calendar.{$language}.js"
+                $this->sourcePath . "/{$language}.js"
             ))) {
-                $this->language = substr($this->language, 0, 2);
+                $this->lang = substr($this->lang, 0, 2);
                 return parent::registerAssetFiles($view);
             }
             $this->js[] = $this->language . '.js';
