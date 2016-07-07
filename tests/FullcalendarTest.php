@@ -22,7 +22,7 @@ HTML;
             'lang' => 'es',
             'options' => ['id' => 'es-calendar'],
         ]));
-
+        
         $this->assertEquals(
             'jQuery(\'#es-calendar\').fullCalendar({"lang":"es"});',
             end($view->js[View::POS_READY])

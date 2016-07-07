@@ -23,28 +23,18 @@ HTML;
             'dataProvider' => new ArrayDataProvider([
                 'allModels' => [
                     new data\DataItem([
-                        'name' => 'Conference',
-                        'startDate' => '2016-01-01',
-                        'endDate' => '2016-02-03',
-                    ]),
-                    new data\DataItem([
-                        'name' => 'Random',
-                        'startDate' => '2016-03-01',
-                        'endDate' => '2016-03-03',
-                    ]),
+                        'id' => 1,
+                        'title' => 'Conference',
+                        'start' => '2016-02-03',
+                    ])
                 ],
             ]),
         ]));
-
+    
         $expected = <<<'JS'
-jQuery('#active-calendar').fullCalendar({"dataSource":[
+jQuery('#active-calendar').fullCalendar({"events":[
     {
-        "id":"uno",
-        "title":"Conference",
-        "start":new Date('2016-02-03')
-    },
-    {
-        "id":"uno",
+        "id":1,
         "title":"Conference",
         "start":new Date('2016-02-03')
     }
