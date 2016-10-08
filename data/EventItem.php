@@ -16,7 +16,7 @@ interface EventItem extends \yii\base\Arrayable
     /**
      * Gets the `endDate` property of a `dataSource` item.
      *
-     * @return JsExpression containing a js `Date` object
+     * @return string|integer
      */
     public function getCalendarEventId();
 
@@ -30,7 +30,7 @@ interface EventItem extends \yii\base\Arrayable
     /**
      * Gets the `startDate` property of a `dataSource` item.
      *
-     * @return JsExpression containing a js `Date` object
+     * @return JsExpression|string containing a js `Date` object
      */
     public function getStart();
 }
